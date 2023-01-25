@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,28 +14,88 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Animations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePp-By-l1L">
-                                <rect key="frame" x="175" y="148" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPa-8N-wdu">
+                                <rect key="frame" x="162.66666666666666" y="789" width="104.99999999999997" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Gl8-qu-kxU"/>
+                                    <constraint firstAttribute="width" constant="105" id="cXn-HU-H68"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="animate">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDf-iL-G3X"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="combined animations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heO-4T-djQ">
+                                <rect key="frame" x="119" y="423" width="192" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="58A-v2-zFX"/>
+                                    <constraint firstAttribute="height" constant="26" id="xME-mx-I1G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlO-iL-fSz">
+                                <rect key="frame" x="115" y="215" width="200" height="200"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Bo8-2Q-F3H"/>
+                                    <constraint firstAttribute="height" constant="200" id="nPi-x3-Ecl"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusV">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="animate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRg-vC-02t">
+                                <rect key="frame" x="178.66666666666666" y="793" width="73" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="6Ow-aw-941"/>
+                                    <constraint firstAttribute="height" constant="26" id="bS0-Su-GUO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zRg-vC-02t" secondAttribute="bottom" constant="79" id="9k2-fb-Jeh"/>
+                            <constraint firstItem="heO-4T-djQ" firstAttribute="top" secondItem="nlO-iL-fSz" secondAttribute="bottom" constant="8" symbolic="YES" id="9qf-CW-Yfr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="CPa-8N-wdu" secondAttribute="bottom" constant="74" id="IUN-kB-S6D"/>
+                            <constraint firstItem="nlO-iL-fSz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="156" id="L1W-Ye-dCH"/>
+                            <constraint firstItem="CPa-8N-wdu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oct-iS-kOq"/>
+                            <constraint firstItem="zRg-vC-02t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SSS-Ch-GDl"/>
+                            <constraint firstItem="nlO-iL-fSz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pRA-He-ck7"/>
+                            <constraint firstItem="heO-4T-djQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wCh-j0-5qv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="text" destination="heO-4T-djQ" id="l4g-64-3ZY"/>
+                        <outlet property="viewTitle" destination="nlO-iL-fSz" id="9jp-8o-z5g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="4"/>
+            <point key="canvasLocation" x="46.564885496183201" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
